@@ -1,0 +1,724 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python API reference &mdash; MinilibX Python API</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=38d273f4"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Getting started" href="getting_started.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            MinilibX Python API
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#install-the-python-package">Install the Python package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#build-these-docs">Build these docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#python-wrapper-behavior">Python wrapper behavior</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Python API reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#mlx.Mlx"><code class="docutils literal notranslate"><span class="pre">Mlx</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mlx.Mlx.mlx_init"><code class="docutils literal notranslate"><span class="pre">Mlx.mlx_init()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mlx.Mlx.mlx_release"><code class="docutils literal notranslate"><span class="pre">Mlx.mlx_release()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mlx.Mlx.mlx_new_window"><code class="docutils literal notranslate"><span class="pre">Mlx.mlx_new_window()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mlx.Mlx.mlx_clear_window"><code class="docutils literal notranslate"><span class="pre">Mlx.mlx_clear_window()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mlx.Mlx.mlx_pixel_put"><code class="docutils literal notranslate"><span class="pre">Mlx.mlx_pixel_put()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mlx.Mlx.mlx_destroy_window"><code class="docutils literal notranslate"><span class="pre">Mlx.mlx_destroy_window()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mlx.Mlx.mlx_new_image"><code class="docutils literal notranslate"><span class="pre">Mlx.mlx_new_image()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mlx.Mlx.mlx_get_data_addr"><code class="docutils literal notranslate"><span class="pre">Mlx.mlx_get_data_addr()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mlx.Mlx.mlx_put_image_to_window"><code class="docutils literal notranslate"><span class="pre">Mlx.mlx_put_image_to_window()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mlx.Mlx.mlx_destroy_image"><code class="docutils literal notranslate"><span class="pre">Mlx.mlx_destroy_image()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mlx.Mlx.mlx_loop"><code class="docutils literal notranslate"><span class="pre">Mlx.mlx_loop()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mlx.Mlx.mlx_loop_exit"><code class="docutils literal notranslate"><span class="pre">Mlx.mlx_loop_exit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mlx.Mlx.mlx_mouse_hook"><code class="docutils literal notranslate"><span class="pre">Mlx.mlx_mouse_hook()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mlx.Mlx.mlx_key_hook"><code class="docutils literal notranslate"><span class="pre">Mlx.mlx_key_hook()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mlx.Mlx.mlx_expose_hook"><code class="docutils literal notranslate"><span class="pre">Mlx.mlx_expose_hook()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mlx.Mlx.mlx_loop_hook"><code class="docutils literal notranslate"><span class="pre">Mlx.mlx_loop_hook()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mlx.Mlx.mlx_hook"><code class="docutils literal notranslate"><span class="pre">Mlx.mlx_hook()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mlx.Mlx.mlx_string_put"><code class="docutils literal notranslate"><span class="pre">Mlx.mlx_string_put()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mlx.Mlx.mlx_xpm_file_to_image"><code class="docutils literal notranslate"><span class="pre">Mlx.mlx_xpm_file_to_image()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mlx.Mlx.mlx_png_file_to_image"><code class="docutils literal notranslate"><span class="pre">Mlx.mlx_png_file_to_image()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mlx.Mlx.mlx_mouse_hide"><code class="docutils literal notranslate"><span class="pre">Mlx.mlx_mouse_hide()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mlx.Mlx.mlx_mouse_show"><code class="docutils literal notranslate"><span class="pre">Mlx.mlx_mouse_show()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mlx.Mlx.mlx_mouse_move"><code class="docutils literal notranslate"><span class="pre">Mlx.mlx_mouse_move()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mlx.Mlx.mlx_mouse_get_pos"><code class="docutils literal notranslate"><span class="pre">Mlx.mlx_mouse_get_pos()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mlx.Mlx.mlx_do_key_autorepeatoff"><code class="docutils literal notranslate"><span class="pre">Mlx.mlx_do_key_autorepeatoff()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mlx.Mlx.mlx_do_key_autorepeaton"><code class="docutils literal notranslate"><span class="pre">Mlx.mlx_do_key_autorepeaton()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mlx.Mlx.mlx_get_screen_size"><code class="docutils literal notranslate"><span class="pre">Mlx.mlx_get_screen_size()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mlx.Mlx.mlx_do_sync"><code class="docutils literal notranslate"><span class="pre">Mlx.mlx_do_sync()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mlx.Mlx.mlx_sync"><code class="docutils literal notranslate"><span class="pre">Mlx.mlx_sync()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mlx.Mlx.SYNC_IMAGE_WRITABLE"><code class="docutils literal notranslate"><span class="pre">Mlx.SYNC_IMAGE_WRITABLE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mlx.Mlx.SYNC_WIN_FLUSH"><code class="docutils literal notranslate"><span class="pre">Mlx.SYNC_WIN_FLUSH</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mlx.Mlx.SYNC_WIN_COMPLETED"><code class="docutils literal notranslate"><span class="pre">Mlx.SYNC_WIN_COMPLETED</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#callback-signatures">Callback signatures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#image-pixel-data">Image pixel data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#synchronization-commands">Synchronization commands</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MinilibX Python API</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Python API reference</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/api.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="python-api-reference">
+<h1>Python API reference<a class="headerlink" href="#python-api-reference" title="Link to this heading"></a></h1>
+<p>The package exports <a class="reference internal" href="#mlx.Mlx" title="mlx.Mlx"><code class="xref py py-class docutils literal notranslate"><span class="pre">mlx.Mlx</span></code></a>. Its methods are a thin wrapper over the
+MinilibX C library documented in <code class="docutils literal notranslate"><span class="pre">src/mlx.h</span></code>. Return codes from native
+functions are passed through, typically as <code class="docutils literal notranslate"><span class="pre">0</span></code> on success. Calls that
+produce a native pointer return <code class="docutils literal notranslate"><span class="pre">None</span></code> when creation fails.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="mlx.Mlx">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">mlx.</span></span><span class="sig-name descname"><span class="pre">Mlx</span></span><a class="headerlink" href="#mlx.Mlx" title="Link to this definition"></a></dt>
+<dd><p>Thin ctypes wrapper exposing every function documented in mlx.h.</p>
+<p>Load the MLX shared library shipped alongside this module.</p>
+<dl class="field-list simple">
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="mlx.Mlx.mlx_init">
+<span class="sig-name descname"><span class="pre">mlx_init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mlx.Mlx.mlx_init" title="Link to this definition"></a></dt>
+<dd><p>Initialize the library. Must be called before anything else.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int | None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mlx.Mlx.mlx_release">
+<span class="sig-name descname"><span class="pre">mlx_release</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mlx_ptr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mlx.Mlx.mlx_release" title="Link to this definition"></a></dt>
+<dd><p>Release every resource held by <code class="docutils literal notranslate"><span class="pre">mlx_ptr</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mlx_ptr</strong> (<em>int</em><em> | </em><em>None</em>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mlx.Mlx.mlx_new_window">
+<span class="sig-name descname"><span class="pre">mlx_new_window</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mlx_ptr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mlx.Mlx.mlx_new_window" title="Link to this definition"></a></dt>
+<dd><p>Create a new window of the given size and title.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mlx_ptr</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>width</strong> (<em>int</em>)</p></li>
+<li><p><strong>height</strong> (<em>int</em>)</p></li>
+<li><p><strong>title</strong> (<em>str</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int | None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mlx.Mlx.mlx_clear_window">
+<span class="sig-name descname"><span class="pre">mlx_clear_window</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mlx_ptr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">win_ptr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mlx.Mlx.mlx_clear_window" title="Link to this definition"></a></dt>
+<dd><p>Clear the whole window to black.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mlx_ptr</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>win_ptr</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mlx.Mlx.mlx_pixel_put">
+<span class="sig-name descname"><span class="pre">mlx_pixel_put</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mlx_ptr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">win_ptr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mlx.Mlx.mlx_pixel_put" title="Link to this definition"></a></dt>
+<dd><p>Set a single pixel of the window to <code class="docutils literal notranslate"><span class="pre">color</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mlx_ptr</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>win_ptr</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>x</strong> (<em>int</em>)</p></li>
+<li><p><strong>y</strong> (<em>int</em>)</p></li>
+<li><p><strong>color</strong> (<em>int</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mlx.Mlx.mlx_destroy_window">
+<span class="sig-name descname"><span class="pre">mlx_destroy_window</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mlx_ptr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">win_ptr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mlx.Mlx.mlx_destroy_window" title="Link to this definition"></a></dt>
+<dd><p>Destroy a window created by <a class="reference internal" href="#mlx.Mlx.mlx_new_window" title="mlx.Mlx.mlx_new_window"><code class="xref py py-meth docutils literal notranslate"><span class="pre">mlx_new_window()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mlx_ptr</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>win_ptr</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mlx.Mlx.mlx_new_image">
+<span class="sig-name descname"><span class="pre">mlx_new_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mlx_ptr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mlx.Mlx.mlx_new_image" title="Link to this definition"></a></dt>
+<dd><p>Create a new off-screen image of the given size.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mlx_ptr</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>width</strong> (<em>int</em>)</p></li>
+<li><p><strong>height</strong> (<em>int</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int | None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mlx.Mlx.mlx_get_data_addr">
+<span class="sig-name descname"><span class="pre">mlx_get_data_addr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img_ptr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mlx.Mlx.mlx_get_data_addr" title="Link to this definition"></a></dt>
+<dd><p>Return a writable <code class="docutils literal notranslate"><span class="pre">(pixels,</span> <span class="pre">bits_per_pixel,</span> <span class="pre">size_line,</span> <span class="pre">format)</span></code>.</p>
+<p>API break: returns a tuple instead of writing through pointers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>img_ptr</strong> (<em>int</em><em> | </em><em>None</em>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>Tuple</em>[memoryview, int, int, int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mlx.Mlx.mlx_put_image_to_window">
+<span class="sig-name descname"><span class="pre">mlx_put_image_to_window</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mlx_ptr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">win_ptr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_ptr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mlx.Mlx.mlx_put_image_to_window" title="Link to this definition"></a></dt>
+<dd><p>Blit an image onto a window at <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mlx_ptr</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>win_ptr</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>img_ptr</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>x</strong> (<em>int</em>)</p></li>
+<li><p><strong>y</strong> (<em>int</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mlx.Mlx.mlx_destroy_image">
+<span class="sig-name descname"><span class="pre">mlx_destroy_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mlx_ptr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_ptr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mlx.Mlx.mlx_destroy_image" title="Link to this definition"></a></dt>
+<dd><p>Destroy an image created by <a class="reference internal" href="#mlx.Mlx.mlx_new_image" title="mlx.Mlx.mlx_new_image"><code class="xref py py-meth docutils literal notranslate"><span class="pre">mlx_new_image()</span></code></a> (or a loader).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mlx_ptr</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>img_ptr</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mlx.Mlx.mlx_loop">
+<span class="sig-name descname"><span class="pre">mlx_loop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mlx_ptr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mlx.Mlx.mlx_loop" title="Link to this definition"></a></dt>
+<dd><p>Run the event loop until <a class="reference internal" href="#mlx.Mlx.mlx_loop_exit" title="mlx.Mlx.mlx_loop_exit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">mlx_loop_exit()</span></code></a> is called.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mlx_ptr</strong> (<em>int</em><em> | </em><em>None</em>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mlx.Mlx.mlx_loop_exit">
+<span class="sig-name descname"><span class="pre">mlx_loop_exit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mlx_ptr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mlx.Mlx.mlx_loop_exit" title="Link to this definition"></a></dt>
+<dd><p>Ask a running <a class="reference internal" href="#mlx.Mlx.mlx_loop" title="mlx.Mlx.mlx_loop"><code class="xref py py-meth docutils literal notranslate"><span class="pre">mlx_loop()</span></code></a> to return.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mlx_ptr</strong> (<em>int</em><em> | </em><em>None</em>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mlx.Mlx.mlx_mouse_hook">
+<span class="sig-name descname"><span class="pre">mlx_mouse_hook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">win_ptr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mlx.Mlx.mlx_mouse_hook" title="Link to this definition"></a></dt>
+<dd><p>Register (or clear, with <code class="docutils literal notranslate"><span class="pre">callback=None</span></code>) a mouse-click hook.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>win_ptr</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>callback</strong> (<em>Callable</em><em>[</em><em>[</em><em>int</em><em>, </em><em>int</em><em>, </em><em>int</em><em>, </em><em>object</em><em>]</em><em>, </em><em>object</em><em>] </em><em>| </em><em>None</em>)</p></li>
+<li><p><strong>param</strong> (<em>object</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mlx.Mlx.mlx_key_hook">
+<span class="sig-name descname"><span class="pre">mlx_key_hook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">win_ptr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mlx.Mlx.mlx_key_hook" title="Link to this definition"></a></dt>
+<dd><p>Register (or clear, with <code class="docutils literal notranslate"><span class="pre">callback=None</span></code>) a key-release hook.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>win_ptr</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>callback</strong> (<em>Callable</em><em>[</em><em>[</em><em>int</em><em>, </em><em>object</em><em>]</em><em>, </em><em>object</em><em>] </em><em>| </em><em>None</em>)</p></li>
+<li><p><strong>param</strong> (<em>object</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mlx.Mlx.mlx_expose_hook">
+<span class="sig-name descname"><span class="pre">mlx_expose_hook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">win_ptr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mlx.Mlx.mlx_expose_hook" title="Link to this definition"></a></dt>
+<dd><p>Register (or clear, with <code class="docutils literal notranslate"><span class="pre">callback=None</span></code>) an expose hook.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>win_ptr</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>callback</strong> (<em>Callable</em><em>[</em><em>[</em><em>object</em><em>]</em><em>, </em><em>object</em><em>] </em><em>| </em><em>None</em>)</p></li>
+<li><p><strong>param</strong> (<em>object</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mlx.Mlx.mlx_loop_hook">
+<span class="sig-name descname"><span class="pre">mlx_loop_hook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mlx_ptr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mlx.Mlx.mlx_loop_hook" title="Link to this definition"></a></dt>
+<dd><p>Register (or clear, with <code class="docutils literal notranslate"><span class="pre">callback=None</span></code>) a per-loop-tick hook.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mlx_ptr</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>callback</strong> (<em>Callable</em><em>[</em><em>[</em><em>object</em><em>]</em><em>, </em><em>object</em><em>] </em><em>| </em><em>None</em>)</p></li>
+<li><p><strong>param</strong> (<em>object</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mlx.Mlx.mlx_hook">
+<span class="sig-name descname"><span class="pre">mlx_hook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">win_ptr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_mask</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mlx.Mlx.mlx_hook" title="Link to this definition"></a></dt>
+<dd><p>Register a hook for a raw (X11-numbered) event on a window.</p>
+<p>Unlike the convenience hooks above, the callback’s arity depends
+on <code class="docutils literal notranslate"><span class="pre">x_event</span></code>: key events get <code class="docutils literal notranslate"><span class="pre">(keycode,</span> <span class="pre">param)</span></code>, button
+events get <code class="docutils literal notranslate"><span class="pre">(button,</span> <span class="pre">x,</span> <span class="pre">y,</span> <span class="pre">param)</span></code>, motion events get
+<code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y,</span> <span class="pre">param)</span></code>, anything else gets just <code class="docutils literal notranslate"><span class="pre">(param,)</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>win_ptr</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>x_event</strong> (<em>int</em>)</p></li>
+<li><p><strong>x_mask</strong> (<em>int</em>)</p></li>
+<li><p><strong>callback</strong> (<em>Callable</em><em>[</em><em>[</em><em>...</em><em>]</em><em>, </em><em>object</em><em>] </em><em>| </em><em>None</em>)</p></li>
+<li><p><strong>param</strong> (<em>object</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mlx.Mlx.mlx_string_put">
+<span class="sig-name descname"><span class="pre">mlx_string_put</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mlx_ptr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">win_ptr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mlx.Mlx.mlx_string_put" title="Link to this definition"></a></dt>
+<dd><p>Draw <code class="docutils literal notranslate"><span class="pre">string</span></code> at <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code> using the built-in bitmap font.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mlx_ptr</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>win_ptr</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>x</strong> (<em>int</em>)</p></li>
+<li><p><strong>y</strong> (<em>int</em>)</p></li>
+<li><p><strong>color</strong> (<em>int</em>)</p></li>
+<li><p><strong>string</strong> (<em>str</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mlx.Mlx.mlx_xpm_file_to_image">
+<span class="sig-name descname"><span class="pre">mlx_xpm_file_to_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mlx_ptr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mlx.Mlx.mlx_xpm_file_to_image" title="Link to this definition"></a></dt>
+<dd><p>Load an XPM file, returning <code class="docutils literal notranslate"><span class="pre">(image,</span> <span class="pre">width,</span> <span class="pre">height)</span></code>.</p>
+<p>API break: returns a tuple instead of writing through pointers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mlx_ptr</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>filename</strong> (<em>str</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>Tuple</em>[int | None, int, int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mlx.Mlx.mlx_png_file_to_image">
+<span class="sig-name descname"><span class="pre">mlx_png_file_to_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mlx_ptr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mlx.Mlx.mlx_png_file_to_image" title="Link to this definition"></a></dt>
+<dd><p>Load a PNG file, returning <code class="docutils literal notranslate"><span class="pre">(image,</span> <span class="pre">width,</span> <span class="pre">height)</span></code>.</p>
+<p>API break: returns a tuple instead of writing through pointers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mlx_ptr</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>filename</strong> (<em>str</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>Tuple</em>[int | None, int, int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mlx.Mlx.mlx_mouse_hide">
+<span class="sig-name descname"><span class="pre">mlx_mouse_hide</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mlx_ptr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mlx.Mlx.mlx_mouse_hide" title="Link to this definition"></a></dt>
+<dd><p>Hide the mouse cursor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mlx_ptr</strong> (<em>int</em><em> | </em><em>None</em>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mlx.Mlx.mlx_mouse_show">
+<span class="sig-name descname"><span class="pre">mlx_mouse_show</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mlx_ptr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mlx.Mlx.mlx_mouse_show" title="Link to this definition"></a></dt>
+<dd><p>Show the mouse cursor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mlx_ptr</strong> (<em>int</em><em> | </em><em>None</em>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mlx.Mlx.mlx_mouse_move">
+<span class="sig-name descname"><span class="pre">mlx_mouse_move</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">win_ptr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mlx.Mlx.mlx_mouse_move" title="Link to this definition"></a></dt>
+<dd><p>Move the mouse cursor to <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code> within the window.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>win_ptr</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>x</strong> (<em>int</em>)</p></li>
+<li><p><strong>y</strong> (<em>int</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mlx.Mlx.mlx_mouse_get_pos">
+<span class="sig-name descname"><span class="pre">mlx_mouse_get_pos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">win_ptr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mlx.Mlx.mlx_mouse_get_pos" title="Link to this definition"></a></dt>
+<dd><p>Return <code class="docutils literal notranslate"><span class="pre">(status,</span> <span class="pre">x,</span> <span class="pre">y)</span></code>, the current mouse position.</p>
+<p>API break: returns a tuple instead of writing through pointers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>win_ptr</strong> (<em>int</em><em> | </em><em>None</em>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>Tuple</em>[int, int, int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mlx.Mlx.mlx_do_key_autorepeatoff">
+<span class="sig-name descname"><span class="pre">mlx_do_key_autorepeatoff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mlx_ptr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mlx.Mlx.mlx_do_key_autorepeatoff" title="Link to this definition"></a></dt>
+<dd><p>Disable OS-level keyboard auto-repeat.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mlx_ptr</strong> (<em>int</em><em> | </em><em>None</em>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mlx.Mlx.mlx_do_key_autorepeaton">
+<span class="sig-name descname"><span class="pre">mlx_do_key_autorepeaton</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mlx_ptr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mlx.Mlx.mlx_do_key_autorepeaton" title="Link to this definition"></a></dt>
+<dd><p>Re-enable OS-level keyboard auto-repeat.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mlx_ptr</strong> (<em>int</em><em> | </em><em>None</em>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mlx.Mlx.mlx_get_screen_size">
+<span class="sig-name descname"><span class="pre">mlx_get_screen_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mlx_ptr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mlx.Mlx.mlx_get_screen_size" title="Link to this definition"></a></dt>
+<dd><p>Return <code class="docutils literal notranslate"><span class="pre">(status,</span> <span class="pre">width,</span> <span class="pre">height)</span></code> of the screen.</p>
+<p>API break: returns a tuple instead of writing through pointers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mlx_ptr</strong> (<em>int</em><em> | </em><em>None</em>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>Tuple</em>[int, int, int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mlx.Mlx.mlx_do_sync">
+<span class="sig-name descname"><span class="pre">mlx_do_sync</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mlx_ptr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mlx.Mlx.mlx_do_sync" title="Link to this definition"></a></dt>
+<dd><p>Flush all pending requests for every window, wait for completion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mlx_ptr</strong> (<em>int</em><em> | </em><em>None</em>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mlx.Mlx.mlx_sync">
+<span class="sig-name descname"><span class="pre">mlx_sync</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mlx_ptr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_or_win_ptr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mlx.Mlx.mlx_sync" title="Link to this definition"></a></dt>
+<dd><p>Run one of the <code class="docutils literal notranslate"><span class="pre">SYNC_*</span></code> commands against an image or a window.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mlx_ptr</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>cmd</strong> (<em>int</em>)</p></li>
+<li><p><strong>img_or_win_ptr</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mlx.Mlx.SYNC_IMAGE_WRITABLE">
+<span class="sig-name descname"><span class="pre">SYNC_IMAGE_WRITABLE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#mlx.Mlx.SYNC_IMAGE_WRITABLE" title="Link to this definition"></a></dt>
+<dd><p>wait until the image’s data can be written again.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>mlx_sync() command</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mlx.Mlx.SYNC_WIN_FLUSH">
+<span class="sig-name descname"><span class="pre">SYNC_WIN_FLUSH</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#mlx.Mlx.SYNC_WIN_FLUSH" title="Link to this definition"></a></dt>
+<dd><p>wait until all pending requests are sent.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>mlx_sync() command</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mlx.Mlx.SYNC_WIN_COMPLETED">
+<span class="sig-name descname"><span class="pre">SYNC_WIN_COMPLETED</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></span><a class="headerlink" href="#mlx.Mlx.SYNC_WIN_COMPLETED" title="Link to this definition"></a></dt>
+<dd><p>wait until pending requests are sent and completed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>mlx_sync() command</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<section id="callback-signatures">
+<h2>Callback signatures<a class="headerlink" href="#callback-signatures" title="Link to this heading"></a></h2>
+<p>The callback aliases below are available from <code class="docutils literal notranslate"><span class="pre">mlx.mlx</span></code> and describe the
+convenience hook methods:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">MouseCallback</span></code>: <code class="docutils literal notranslate"><span class="pre">(button,</span> <span class="pre">x,</span> <span class="pre">y,</span> <span class="pre">param)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">KeyCallback</span></code>: <code class="docutils literal notranslate"><span class="pre">(keycode,</span> <span class="pre">param)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NoArgCallback</span></code>: <code class="docutils literal notranslate"><span class="pre">(param,)</span></code>; used by expose and loop hooks</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HookCallback</span></code>: generic callback for <a class="reference internal" href="#mlx.Mlx.mlx_hook" title="mlx.Mlx.mlx_hook"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Mlx.mlx_hook()</span></code></a>; its arguments
+depend on the event number</p></li>
+</ul>
+<p>The generic hook uses raw X11 event numbers: key events 2 and 3 receive
+<code class="docutils literal notranslate"><span class="pre">(keycode,</span> <span class="pre">param)</span></code>, button events 4 and 5 receive <code class="docutils literal notranslate"><span class="pre">(button,</span> <span class="pre">x,</span> <span class="pre">y,</span> <span class="pre">param)</span></code>,
+and motion event 6 receives <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y,</span> <span class="pre">param)</span></code>. Other event numbers receive
+<code class="docutils literal notranslate"><span class="pre">(param,)</span></code>. Event masks are backend dependent.</p>
+</section>
+<section id="image-pixel-data">
+<h2>Image pixel data<a class="headerlink" href="#image-pixel-data" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">mlx_get_data_addr</span></code> returns a writable view into the native image buffer.
+Use <code class="docutils literal notranslate"><span class="pre">size_line</span></code> to find the start of each row; rows may include padding, so
+do not assume the stride is <code class="docutils literal notranslate"><span class="pre">width</span> <span class="pre">*</span> <span class="pre">bytes_per_pixel</span></code>. The returned
+<code class="docutils literal notranslate"><span class="pre">format</span></code> is <code class="docutils literal notranslate"><span class="pre">0</span></code> for B8G8R8A8 or <code class="docutils literal notranslate"><span class="pre">1</span></code> for A8R8G8B8. The view remains tied to
+the native image and must not be used after <code class="docutils literal notranslate"><span class="pre">mlx_destroy_image</span></code>.</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">mlx_pixel_put</span></code> and <code class="docutils literal notranslate"><span class="pre">mlx_string_put</span></code>, the color is an unsigned integer.
+On little-endian systems, the documented byte order corresponds to
+<code class="docutils literal notranslate"><span class="pre">0xAARRGGBB</span></code>; the integer representation differs on big-endian systems.</p>
+</section>
+<section id="synchronization-commands">
+<h2>Synchronization commands<a class="headerlink" href="#synchronization-commands" title="Link to this heading"></a></h2>
+<p>Use <a class="reference internal" href="#mlx.Mlx.mlx_sync" title="mlx.Mlx.mlx_sync"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Mlx.mlx_sync()</span></code></a> with one of the <code class="docutils literal notranslate"><span class="pre">Mlx.SYNC_*</span></code> constants:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SYNC_IMAGE_WRITABLE</span></code> (<code class="docutils literal notranslate"><span class="pre">1</span></code>): wait until an image can be written again.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SYNC_WIN_FLUSH</span></code> (<code class="docutils literal notranslate"><span class="pre">2</span></code>): wait until pending window requests are sent.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SYNC_WIN_COMPLETED</span></code> (<code class="docutils literal notranslate"><span class="pre">3</span></code>): wait until pending requests are sent and
+completed.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">mlx_do_sync</span></code> flushes requests for all windows. On the AppKit backend, a
+frame is shown only while <code class="docutils literal notranslate"><span class="pre">mlx_loop</span></code> pumps the native event loop; a sync call
+alone does not display it.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="getting_started.html" class="btn btn-neutral float-left" title="Getting started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2000–2026, Olivier Crouzet.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -60,3 +60,5 @@ This function expects 2 uint pointers to fill them, back to the caller.
 - mlx_get_screen_size(mlx_ptr)
 The Python equivalent only takes 1 parameter instead of 3, but returns a tuple with the
 return value and the 2 unsigned ints.
+
+The repository also contains a [Sphinx reference for the Python API](../docs/index.rst), including a quick start and documentation for every method on `Mlx`.

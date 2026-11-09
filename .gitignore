@@ -5,6 +5,8 @@
 *.dSYM/
 *~
 
+**/__pycache__
+
 # written by a standalone ./configure.sh run, remembers the auto-detected
 # or user-picked backend for plain `make` to pick up (see Makefile)
 .mlx_config.mk
